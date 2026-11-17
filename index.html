@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f2">
+    <meta name="description" content="Простой конвертер веса, роста и температуры для питомцев.">
+    <title>Лапки — конвертер единиц для питомцев</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Лапки — на главную">
+        <span class="brand-mark" aria-hidden="true">⌁</span>
+        <span>лапки<span class="brand-dot">.</span></span>
+      </a>
+      <span class="header-note">Забота — в деталях</span>
+    </header>
+
+    <main class="page">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span aria-hidden="true">✳</span> Маленький помощник для больших забот</p>
+        <h1 id="page-title">Всё сходится.<br><span>Даже единицы.</span></h1>
+        <p class="intro-copy">Весы в фунтах, рост в дюймах или температура в фаренгейтах? Переведём на понятный язык.</p>
+      </section>
+
+      <section class="converter-card" aria-label="Конвертер единиц">
+        <div class="card-top">
+          <div>
+            <p class="section-label">Что будем переводить?</p>
+            <div class="category-tabs" role="group" aria-label="Категория измерения">
+              <button class="category-tab is-active" type="button" data-category="weight" aria-pressed="true">⚖️ <span>Вес</span></button>
+              <button class="category-tab" type="button" data-category="length" aria-pressed="false">📏 <span>Рост</span></button>
+              <button class="category-tab" type="button" data-category="temperature" aria-pressed="false">🌡️ <span>Температура</span></button>
+            </div>
+          </div>
+          <span class="card-paw" aria-hidden="true">🐾</span>
+        </div>
+
+        <form id="converter-form">
+          <div class="conversion-row">
+            <label class="field">
+              <span class="field-label">У меня есть</span>
+              <span class="input-wrap">
+                <input id="amount" name="amount" type="number" inputmode="decimal" step="any" value="12.5" required aria-label="Исходное значение">
+                <select id="from-unit" aria-label="Исходная единица"></select>
+              </span>
+            </label>
+
+            <button id="swap-button" class="swap-button" type="button" aria-label="Поменять единицы местами" title="Поменять единицы местами">⇄</button>
+
+            <div class="field result-field">
+              <span class="field-label">Это будет</span>
+              <div class="result-wrap">
+                <output id="result" for="amount from-unit to-unit" aria-live="polite">—</output>
+                <select id="to-unit" aria-label="Единица результата"></select>
+              </div>
+            </div>
+          </div>
+          <p id="validation-message" class="validation-message" role="status"></p>
+        </form>
+
+        <div class="card-footer">
+          <span><span class="sparkle" aria-hidden="true">✦</span> Точные расчёты, без лишних хлопот</span>
+          <span class="precision-note">Округляем до 4 знаков</span>
+        </div>
+      </section>
+
+      <p class="page-footnote">Для важных медицинских решений сверяйтесь с ветеринаром.</p>
+    </main>
+  </body>
+</html>
